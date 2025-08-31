@@ -57,11 +57,6 @@ This project is built and tested on [Wokwi Simulator](https://wokwi.com/projects
 
 ---
 
-## 📸 Simulation Screenshot
-*(You can add a screenshot of your Wokwi project here)*  
-
----
-
 ## 👩‍💻 Author
 **Vaishali Pujari**  
 Electronics & Communication Engineering | IoT & Embedded Systems Enthusiast  
