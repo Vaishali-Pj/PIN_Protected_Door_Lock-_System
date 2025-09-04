@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "Vaishali Pujari",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 86.4, "left": -23.96, "attrs": {} },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": 180.4, "left": 140, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 74.8, "left": 124.8, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -70.4,
+      "left": 130.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 79.2,
+      "left": 318.6,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:16", "keypad1:R1", "green", [ "h19.2", "v201.6" ] ],
+    [ "esp:17", "keypad1:R2", "green", [ "h28.8", "v316.8", "h144.4" ] ],
+    [ "esp:18", "keypad1:R3", "green", [ "h38.4", "v345.6", "h144" ] ],
+    [ "esp:19", "keypad1:R4", "green", [ "h48", "v364.8", "h144.2" ] ],
+    [ "esp:33", "keypad1:C1", "green", [ "h-9.45", "v201.6", "h0", "v182.4", "h307.2", "v-9.6" ] ],
+    [ "esp:32", "keypad1:C2", "green", [ "h-19.05", "v403.2", "h326.4", "v0" ] ],
+    [
+      "esp:25",
+      "keypad1:C3",
+      "green",
+      [ "v0", "h-28.65", "v326.4", "h0", "v67.2", "h297.6", "v0", "h48" ]
+    ],
+    [ "esp:26", "keypad1:C4", "green", [ "h-38.25", "v393.6", "h365.1" ] ],
+    [ "esp:15", "servo1:PWM", "blue", [ "v0", "h28.8", "v-96" ] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h-9.6", "v-9.6" ] ],
+    [ "servo1:V+", "esp:3V3", "red", [ "h-19.2", "v-67.1", "h-144", "v48", "h28.8" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "esp:3V3", "lcd1:VCC", "red", [ "h-19.05", "v-144.1" ] ],
+    [ "lcd1:SDA", "esp:21", "gold", [ "h-38.4", "v182.6" ] ],
+    [ "lcd1:SCL", "esp:22", "orange", [ "h-48", "v144.3" ] ],
+    [ "bz1:1", "servo1:GND", "black", [ "v0", "h-230.4", "v-48" ] ],
+    [ "bz1:2", "esp:4", "red", [ "v9.6", "h-221.2", "v9.6" ] ]
+  ],
+  "dependencies": {}
+}
